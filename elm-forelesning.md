@@ -21,16 +21,23 @@ God kode
 Brukervennlig, testbar, lesbar kode
 Scheme: akademisk, men prinsippene er universelle
 
+^ Aksel
+
 ---
 
 ## Ulike FP-språk
 * Lisp og ML: overordnete
 * Peke til de ulike språkene som likner.
 
+^ Aksel
+
 ---
 
 ## Frontendprogrammering
 * Elm er et språk for nettsider
+
+
+^ Johanne
 
 ---
 
@@ -38,6 +45,9 @@ Scheme: akademisk, men prinsippene er universelle
 * Brendan Eich: ville egentlig lage Scheme i nettleseren
 * Litt historikk
 * Litt om hva vi bruker språket til
+
+
+^ Johanne
 
 ---
 
@@ -47,6 +57,9 @@ Scheme: akademisk, men prinsippene er universelle
 * Feiler runtime
 * Dårlige feilmeldinger
 
+
+^ Johanne
+
 ---
 
 ## Elm:
@@ -55,6 +68,9 @@ Scheme: akademisk, men prinsippene er universelle
 * Kompilator!
 * Bra feilmeldinger
 * Elm kompilerer til JavaScript (i dag).
+
+
+^ Johanne
 
 ---
 
@@ -66,6 +82,8 @@ increment x =
 
 five = increment 4
 ```
+
+^ Aksel frem til det står noe annet
 
 ---
 
@@ -208,6 +226,9 @@ type CustomerClass
 
 #### _**like enums on stereoids**_
 
+
+^ Johanne frem til det står noe annet
+
 ---
 
 # Union Types
@@ -284,6 +305,18 @@ Bilde
 
 # Live-koding
 
+
+^ Aksel
+
+
+---
+
+```
+$ npm install -g create-elm-app
+$ create-elm-app min-forste-app
+$ cd min-forste-app
+$ elm-app start
+```	
 
 
 

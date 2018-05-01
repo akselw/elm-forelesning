@@ -36,7 +36,7 @@ Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i
 
 ---
 
-## Ulike FP-språk
+## Funksjonelle programmeringsspråk
 * Lisp-familien: Scheme, Clojure
 * ML-familien: Haskell, Elm
 
@@ -155,7 +155,7 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 * Kompilerer til JavaScript
 * Laget for å lage webapps
 * Tydelig, gjennomgående filosofi
-    * Lett å lære, enkelt å bruke
+* Lett å lære, enkelt å bruke
 * Fokuserer på brukervennlighet
 * Gode kompilatorfeilmeldinger
 * Offisielt anbefalte biblioteker for det man trenger
@@ -190,12 +190,9 @@ five = increment 4
 
 ---
 
-# Records og bindinger
+# Records
 
 ```elm
-x : Int
-x = 42
-
 kunde : { navn : String, alder : Int }
 kunde = 
     { navn = "Ingar"
@@ -418,7 +415,6 @@ Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstan
 ```
 $ npm install -g create-elm-app
 $ create-elm-app min-forste-app
-$ cd min-forste-app
 $ elm-app start
 ```
 

@@ -1,7 +1,8 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, h1, h2, img, ul, li)
+import Html exposing (Html, text, div, h1, h2, img, ul, li, input, button)
 import Html.Attributes exposing (src)
+import Html.Events exposing (onClick, onInput)
 
 
 ---- MODEL ----
@@ -13,9 +14,7 @@ type alias Model =
 
 init : Model
 init =
-    { forelesere =
-        [ "Johanne", "Aksel" ]
-    }
+    { forelesere = [ "Johanne", "Aksel" ] }
 
 
 

@@ -42,8 +42,8 @@
 ---
 
 ## Funksjonelle programmeringsspråk
-* Lisp-familien: Scheme, Clojure
-* ML-familien: Haskell, Elm
+
+<Tegning av FP-familiene>
 
 ^ Aksel: Scheme er et språk i Lisp-familien av funksjonelle språk, som ofte kjennetegnes ved at det er dynamisk typet (og har masse parenteser)
 

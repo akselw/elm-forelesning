@@ -124,7 +124,7 @@ Så elm er bygget på konsepter som har blitt omfavnet av webutviklere, og som h
 
 ---
 
-# Functions & type inference
+# Funksjoner & typeinferens
 
 ```elm
 increment x =
@@ -137,7 +137,7 @@ five = increment 4
 
 ---
 
-# Type Signatures
+# Typesignaturer
 
 ```elm
 
@@ -151,16 +151,16 @@ five = increment 4
 
 ---
 
-# Records and bindings
+# Records og bindinger
 
 ```elm
 x : Int
 x = 42
 
-customer : { name : String, age : Int }
-customer = 
-    { name = "Erik"
-    , age = 24
+kunde : { navn : String, alder : Int }
+kunde = 
+    { navn = "Erik"
+    , alder = 24
     }
 ```
 
@@ -169,19 +169,19 @@ customer =
 # Type alias
 
 ```elm
-type alias Customer =
-    { name: String
-    , age: Int
+type alias Kunde =
+    { navn: String
+    , alder: Int
     }
 
-erik : Customer
+erik : Kunde
 erik = 
-    { name = "Erik"
-    , age = 24
+    { navn = "Erik"
+    , alder = 24
     }   
 ```
 
-#### _**allows us to define new types**_
+#### _**lar oss definere nye typer**_
 
 ---
 
@@ -198,16 +198,16 @@ playerPosition = (0,0)
 # Type alias
 
 ```elm
-type alias Customer =
-    { name: String
-    , age: Int,
+type alias Kunde =
+    { navn: String
+    , alder: Int,
     , type: String
     }
 
-erik : Customer
+erik : Kunde
 erik = 
-    { name = "Erik"
-    , age = 24
+    { navn = "Erik"
+    , alder = 24
     , type = "Student"
     }   
 ```
@@ -217,19 +217,19 @@ erik =
 # Type alias
 
 ```elm
-type alias Customer =
-    { name: String
-    , age: Int,
+type alias Kunde =
+    { navn: String
+    , alder: Int,
     , type: String
-    , studentDiscount: Int
+    , studentRabatt: Int
     }
 
-erik : Customer
+erik : Kunde
 erik = 
-    { name = "Erik"
-    , age = 24
+    { navn = "Erik"
+    , alder = 24
     , type = "Student",
-    , studentDiscount = 50
+    , studentRabatt = 50
     }   
 ```
 
@@ -238,43 +238,43 @@ erik =
 # Type alias
 
 ```elm
-type alias Customer =
-    { name: String
-    , age: Int,
+type alias Kunde =
+    { navn: String
+    , alder: Int,
     , type: String
-    , studentDiscount: Int
-    , companyName: String
+    , studentRabatt: Int
+    , bedriftsnavn: String
     }
 
-erik : Customer
+erik : Kunde
 erik = 
-    { name = "Erik"
-    , age = 24
-    , type = "Corporate",
-    , studentDiscount = 0
-    , companyName = "BEKK Consulting"
+    { navn = "Erik"
+    , alder = 24
+    , type = “Bedrift”,
+    , studentRabatt = 0
+    , bedriftsnavn = "BEKK Consulting"
     }   
 ```
 
 ---
 
-# Three problems:
-_1. We get empty fields with dummy values_
-_2. Easy to mistype `type`-field_
-_3. No help from the compiler_
+# Tre problemer:
+_1. Vi får tomme felter med dummy variabler_
+_2. Enkelt å skrive feil i `type`-felter_
+_3. Ikke noe hjelp fra kompilatoren_
 
 ---
 
 # Union Types
 
 ```elm
-type CustomerClass
+type KundeKlasse
     = Student
-    | Corporate
-    | Private
+    | Bedrift
+    | Privat
 ```
 
-#### _**like enums on stereoids**_
+#### _**som enums på stereoider**_
 
 
 ^ Johanne frem til det står noe annet
@@ -284,50 +284,54 @@ type CustomerClass
 # Union Types
 
 ```elm
-type CustomerClass
+type KundeKlasse
     = Student Int
-    | Corporate String 
-    | Private
+    | Bedrift String 
+    | Privat
 ```
 
-#### _**like enums on stereoids**_
+#### _**som enums på stereoider**_
 
 ---
 
 # Union Types
 
 ```elm
-type alias Discount = Int
-type alias CompanyName = String
-type CustomerClass
-    = Student Discount
-    | Corporate CompanyName 
-    | Private
+type alias Rabatt = Int
+type alias Bedriftsnavn = String
+
+type KundeKlasse
+    = Student Rabatt
+    | Bedrift Bedriftsnavn 
+    | Privat
 ```
 
-#### _**like enums on stereoids**_
+#### _**som enums på stereoider**_
 
 ---
 
 # Pattern Matching
 
 ```elm
-type CustomerClass = Student Discount | Corporate CompanyName | Private
+type KundeKlasse = Student Rabatt | Bedrift Bedriftsnavn | Privat
 
-getDiscount : CustomerClass -> Discount
-getDiscount class =
-    case class of
-        Student discount ->
-            discount
-        Corporate name ->
+getRabatt : KundeKlasse -> Rabatt
+getRabatt kunde =
+    case kunde of
+        Student rabatt ->
+            rabatt
+        Bedrift navn ->
             0
         Private ->
             0
 ```
 
-#### _**forgot a branch? compiler has you covered!**_
+
+#### _**glemt en branch? kompilatoren sier fra!**_
 
 ---
+
+# HTML
 
 ```html
 <div>
@@ -338,7 +342,9 @@ getDiscount class =
 
 ---
 
-```
+# HTML
+
+```elm
 div []
     [ img [src “/image.png”] []
     , h1 [] [ text “Min elm-app!”]
@@ -361,12 +367,20 @@ Bilde
 
 ---
 
+# Vil du prøve selv?
+
 ```
 $ npm install -g create-elm-app
 $ create-elm-app min-forste-app
 $ cd min-forste-app
 $ elm-app start
-```	
+```
+
+---
+
+# Takk for oss
+
+
 
 
 

@@ -7,6 +7,7 @@
 * Syntaks og språkkonsepter
 * Liten app 
 
+^ Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon for å se på det på egenhånd.
 ---
 
 ## Oss
@@ -101,38 +102,62 @@ Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som
 * Svært fleksibelt
 
 ^ JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme, har det ikke statiske typer, det vil si: vi får ikke klager på om vi forsøker å sende inn en int der vi forventer en streng.
+Det er et utrolig fleksibelt språk, som har ført til en voldsom innovasjon. 
 
 ---
 
-## Problemer med JavaScript
+![100%](./images/js-tweet.png)
+
+^ 
+JavaScript-fatigue
+Kan være vanskelig å velge rammeverk og biblioteker.
+
+---
+
+## Tingenes tilstand på frontend
+
+* JS-stacken funker, men er kompleks
+* JS har beveget seg i funksjonell retning: React, Redux
+* Statisk typing har blitt maintream
+
+---
+
+## Vanlige feil i JS
+	
+* `Script error.`
+* `Cannot read property 'getFullYear' of undefined`
+* `Cannot read property 'beskrivelse' of undefined`
+* `undefined is not an object (evaluating 't[0].getFullYear')`
+* `Kan ikke hente egenskapen beskrivelse når den er udefinert eller har nullreferanse`
+* `Kan ikke hente egenskapen getFullYear når den er udefinert eller har nullreferanse`
+* `undefined is not an object (evaluating 't.beskrivelse')`
+* `Kan ikke hente egenskapen id når den er udefinert eller har nullreferanse`
+
+^
+Andre ting som folk irriterer seg grønne over med javascript, er:
 * Feiler runtime
 * Dårlige feilmeldinger
-* Kan være vanskelig å velge rammeverk og biblioteker.
-
-
-^ Johanne
 
 ---
-
-## Elm:
-* Kompilator!
-* Typesikkert/bra typesystem
-* Rent funksjonelt
-* Bra feilmeldinger
-
+## Elm = React + Redux + Immutable.js ++++
 
 ---
-
 ## <Logo av ELM>
 
 ^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet, feks webassembly, som i hvert fall chrome og firefox begynner å  få støtte for, og som er myye raskere.
 
 ---
-## Logo av react og redux (?)
 
-^ Er det noen av dere som har hørt om javascript-rammeverkene react og redux?
-Disse to rammeverkene har egentlig blitt en bransjestandard i dag for å lage nettsider - det er ukontroversielt å velge dem i nye web-prosjekter. Det interessante er at redux er inspirert av måten elm håndterer state på. Og React sine komponenter kan likne til forveksling på Elm sine moduler.
-Så elm er bygget på konsepter som har blitt omfavnet av webutviklere, og som har inspirert en del 
+## Elm
+* Statisk typet funksjonelt språk
+* Kompilerer til JavaScript
+* Laget for å lage webapps
+* Tydelig, gjennomgående filosofi
+    * Lett å lære, enkelt å bruke
+* Fokuserer på brukervennlighet
+* Gode kompilatorfeilmeldinger
+* Offisielt anbefalte biblioteker for det man trenger
+* Lover "ingen kjøretidsfeil"
 
 ---
 
@@ -364,11 +389,17 @@ div []
     ]
 ```
 
+^ Likner på komponenter i React.
+
 ---
 
 ### The Elm Architecture
 
 Bilde
+
+^
+
+Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstand på i JavaScript-applikasjoner er inspirert av måten Elm hån
 
 ---
 

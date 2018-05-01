@@ -1,22 +1,25 @@
 # Elm
+
+[.footer: Aksel Wester og Johanne Håøy Horn, BEKK Consulting AS]
+
+^	
+* Gikk ut av IFI i 2016
+* Tok INF2810 (og digga det)
+* Jobber i Bekk
+
 ---
+
 ## Agenda
 
-* Om oss
 * Motivasjon
 * Syntaks og språkkonsepter
 * Liten app 
 
 ^ 
-Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon for å se på det på egenhånd.
-
----
-
-## Oss
-
-* Gikk ut av IFI i 2016
-* Tok INF2810 (og digga det)
-* Jobber i Bekk
+* Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon til å se på det på egenhånd. 
+* Snakke litt om funksjonell programmering og webutvikling, og erfaringer vi har gjort oss i arbeidslivet.
+* Presentere syntaks og noen sentrale språkkonsepter
+* Lage en bitteliten webapp.
 
 ---
 
@@ -72,8 +75,7 @@ Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp la
 
 ## <Logo av JavaScript>
 
-^ Og så selve rosinen i pølsa: JavasScript. Vi bruker JavaScript, gjerne i form av ett eller flere rammeverk, til å hente ut data fra fra andre systemer, vise det frem på nettsidene våre, få avansert oppførsel som vi kaller “Single page app”, dvs at vi ikke merker at siden laster selv om vi hopper mellom ulike, og mye annet. Egentlig bruker vi JavaScript til så å si alt som ikke har med tekst og stiler å gjøre.
-Og historien til JavaScript er egentlig litt gøyal å kjenne til.
+^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste nettsider slik vi kjenner dem - hvis man ønsker noe mer enn en statisk nettside
 
 ---
 
@@ -122,6 +124,9 @@ Kan være vanskelig å velge rammeverk og biblioteker.
 * JS har beveget seg i funksjonell retning: React, Redux
 * Statisk typing har blitt maintream
 
+^
+Statisk typing har blitt mainstream - dvs at man legger på et rammeverk for å type javascript, som regel innebærer dette at man kompilerer javascripten, og da får feilmeldinger hvis man prøver å sende strenger til funksjoner som bare tar tall osv.
+
 ---
 
 ## Vanlige feil i JS
@@ -141,25 +146,27 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 * Dårlige feilmeldinger
 
 ---
-## Elm = React + Redux + Immutable.js ++++
-
----
 ## <Logo av ELM>
 
-^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet, feks webassembly, som i hvert fall chrome og firefox begynner å  få støtte for, og som er myye raskere.
+^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
 
 ---
 
 ## Elm
 * Statisk typet funksjonelt språk
-* Kompilerer til JavaScript
 * Laget for å lage webapps
+* Lover “ingen kjøretidsfeil”
 * Tydelig, gjennomgående filosofi
 * Lett å lære, enkelt å bruke
+
+^
+Elm = React + Redux + Immutable.js ++++
+
+---
+
 * Fokuserer på brukervennlighet
 * Gode kompilatorfeilmeldinger
 * Offisielt anbefalte biblioteker for det man trenger
-* Lover "ingen kjøretidsfeil"
 
 ---
 
@@ -305,7 +312,7 @@ _3. Ikke noe hjelp fra kompilatoren_
 # Union Types
 
 ```elm
-type Kunde
+type Kundeavtale
     = Student
     | Bedrift
     | Privat
@@ -321,7 +328,7 @@ type Kunde
 # Union Types
 
 ```elm
-type Kunde
+type Kundeavtale
     = Student Int
     | Bedrift String 
     | Privat
@@ -337,7 +344,7 @@ type Kunde
 type alias Rabatt = Int
 type alias Bedriftsnavn = String
 
-type Kunde
+type Kundeavtale
     = Student Rabatt
     | Bedrift Bedriftsnavn 
     | Privat
@@ -345,16 +352,36 @@ type Kunde
 
 #### _**som enums på stereoider**_
 
+^
+Type alias for å gjøre signaturene til typene enklere å lese. Men STudent tar fortsatt en int og bedrift tar fortsatt inn en streng.
+
+---
+
+```elm
+type alias Kunde =
+    { navn: String
+    , alder: Int,
+    , avtale: Kundeavtale
+    }
+
+ingar : Kunde
+ingar =
+    { navn = "Ingar"
+    , alder = 24
+    , avtale = Bedrift “Bekk Consulting”
+    }   
+```
+
 ---
 
 # Pattern Matching
 
 ```elm
-type Kunde = Student Rabatt | Bedrift Bedriftsnavn | Privat
+type Kundeavtale = Student Rabatt | Bedrift Bedriftsnavn | Privat
 
-getRabatt : Kunde -> Rabatt
-getRabatt kunde =
-    case kunde of
+getRabatt : Kundeavtale -> Rabatt
+getRabatt avtale =
+    case avtale of
         Student rabatt ->
             rabatt
         Bedrift navn ->
@@ -388,7 +415,9 @@ div []
     ]
 ```
 
-^ Likner på komponenter i React.
+^ 
+Alle html-elementene har sin egen funksjon i elm, som tar inn to argumenter: en liste med attributter, der vi typisk setter cssen. Og en liste med underelementer.
+Likner litt på hvordan vi bruker komponenter i React.
 
 ---
 

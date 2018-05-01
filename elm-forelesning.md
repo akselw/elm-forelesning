@@ -1,4 +1,6 @@
-# Elm
+# [fit] Elm
+
+![original](./images/alm.png)
 
 [.footer: Aksel Wester og Johanne Håøy Horn, BEKK Consulting AS]
 
@@ -11,7 +13,7 @@
 
 ## Agenda
 
-* Motivasjon
+* FP og webapps
 * Syntaks og språkkonsepter
 * Liten app 
 
@@ -130,15 +132,7 @@ Statisk typing har blitt mainstream - dvs at man legger på et rammeverk for å 
 ---
 
 ## Vanlige feil i JS
-	
-* `Script error.`
-* `Cannot read property 'getFullYear' of undefined`
-* `Cannot read property 'beskrivelse' of undefined`
-* `undefined is not an object (evaluating 't[0].getFullYear')`
-* `Kan ikke hente egenskapen beskrivelse når den er udefinert eller har nullreferanse`
-* `Kan ikke hente egenskapen getFullYear når den er udefinert eller har nullreferanse`
-* `undefined is not an object (evaluating 't.beskrivelse')`
-* `Kan ikke hente egenskapen id når den er udefinert eller har nullreferanse`
+
 
 ^
 Andre ting som folk irriterer seg grønne over med javascript, er:
@@ -146,27 +140,62 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 * Dårlige feilmeldinger
 
 ---
+	
+`Script error.`
+
+---
+
+`Cannot read property 'getFullYear' of undefined`
+
+---
+
+`Cannot read property 'beskrivelse' of undefined`
+
+--- 
+
+`undefined is not an object`
+
+---
+
 ## <Logo av ELM>
 
 ^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
 
 ---
 
-## Elm
-* Statisk typet funksjonelt språk
-* Laget for å lage webapps
-* Lover “ingen kjøretidsfeil”
-* Tydelig, gjennomgående filosofi
-* Lett å lære, enkelt å bruke
-
-^
-Elm = React + Redux + Immutable.js ++++
+### _Elm:_ Statisk typet funksjonelt språk
 
 ---
 
-* Fokuserer på brukervennlighet
-* Gode kompilatorfeilmeldinger
-* Offisielt anbefalte biblioteker for det man trenger
+### _Elm:_ Laget for å lage webapps
+
+---
+
+### _Elm:_ Lover “ingen kjøretidsfeil”
+
+---
+
+### _Elm:_ Fokuserer på brukervennlighet
+
+---
+
+### _Elm:_ Gode kompilatorfeilmeldinger
+
+^
+Null har jo blitt omtalt som the billion dollar mistake - dukket først opp i cobol.
+JavaScript har gjort det enda vanskeligere for seg selv med å slenge undefined med I miksen - men Elm har hverken null eller undefined.
+
+---
+
+### _Elm:_ Tydelig, gjennomgående filosofi
+
+^ 
+Èn måte å lage webapps på, ikke plukk og miks mellom ulike rammeverk.
+Lett å lære, enkelt å bruke. 
+
+---
+
+### _Elm:_ Offisielt anbefalte biblioteker for det man trenger
 
 ---
 
@@ -436,6 +465,16 @@ Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstan
 
 ^ Aksel
 
+
+---
+
+# Hvorfor Elm
+
+* Mindre kompleksitet
+* Færre bugs
+* Enklere refaktorering og vedlikehold
+* Hjelpsomt community
+* Folk som liker Elm liker det _veldig godt_!
 
 ---
 

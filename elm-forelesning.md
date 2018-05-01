@@ -325,7 +325,7 @@ ingar : Kunde
 ingar =
     { navn = "Ingar"
     , alder = 24
-    , avtale = “Bedrift”,
+    , avtale = "Bedrift",
     , studentRabatt = 0
     , bedriftsnavn = "BEKK Consulting"
     }   
@@ -396,7 +396,7 @@ ingar : Kunde
 ingar =
     { navn = "Ingar"
     , alder = 24
-    , avtale = Bedrift “Bekk Consulting”
+    , avtale = Bedrift "Bekk Consulting"
     }   
 ```
 
@@ -427,7 +427,7 @@ getRabatt avtale =
 
 ```html
 <div>
-    <img src=“/image.png” />
+    <img src="/image.png" />
     <h1>Min elm-app!</h1>
 </div>
 ```
@@ -438,8 +438,8 @@ getRabatt avtale =
 
 ```elm
 div []
-    [ img [src “/image.png”] []
-    , h1 [] [ text “Min elm-app!”]
+    [ img [src "/image.png"] []
+    , h1 [] [ text "Min elm-app!"]
     ]
 ```
 

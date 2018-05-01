@@ -509,10 +509,11 @@ $ elm-app start
 ---
 
 # Andre ressurser
+_Introduksjon til Elm:_ [guide.elm-lang.org](https://guide.elm-lang.org)
 
-Elm-miljøet har en slack: [elmlang.herokuapp.com](https://elmlang.herokuapp.com)
+_Elm-miljøet har en slack:_ [elmlang.herokuapp.com](https://elmlang.herokuapp.com)
 
-Elm-workshop: [ewendel.github.io/elm-workshop/](https://ewendel.github.io/elm-workshop/)
+_Elm-workshop:_ [ewendel.github.io/elm-workshop](https://ewendel.github.io/elm-workshop)
 
 
 ^ Elm-miljøet har en slack der alle kan bli med. Alle er veldig vennlige, og de har en policy om at ingen spørsmål er dumme, og alle spørsmål skal få svar. De har til og med en egen beginner-kanal, der det er masse bra hjelp å få.

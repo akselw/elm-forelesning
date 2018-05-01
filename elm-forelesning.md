@@ -2,7 +2,7 @@
 
 ![original](./images/alm.png)
 
-[.footer: Aksel Wester og Johanne Håøy Horn, BEKK Consulting AS]
+[.footer: Aksel Wester og Johanne Håøy Horn, Bekk Consulting AS]
 
 ^
 Vår tur til å snakke om et funksjonelt språk vi digger.
@@ -271,7 +271,7 @@ ingar =
     }   
 ```
 
-#### **lar oss definere nye typer**
+#### **Lar oss definere nye typer**
 
 ---
 
@@ -343,7 +343,7 @@ ingar =
     , alder = 24
     , avtale = "Bedrift",
     , studentRabatt = 0
-    , bedriftsnavn = "BEKK Consulting"
+    , bedriftsnavn = “Bekk Consulting"
     }   
 ```
 
@@ -365,7 +365,7 @@ type Kundeavtale
     | Privat
 ```
 
-#### **som enums på stereoider**
+#### **Som enums på stereoider**
 
 
 ^ Johanne: Disse problemene kan vi løse i Elm ved å bruke det som heter union types.

@@ -255,7 +255,7 @@ ingar =
     }   
 ```
 
-#### _**lar oss definere nye typer**_
+#### **lar oss definere nye typer**
 
 ---
 
@@ -349,7 +349,7 @@ type Kundeavtale
     | Privat
 ```
 
-#### _**som enums på stereoider**_
+#### **som enums på stereoider**
 
 
 ^ Johanne frem til det står noe annet
@@ -365,7 +365,6 @@ type Kundeavtale
     | Privat
 ```
 
-#### _**som enums på stereoider**_
 
 ---
 
@@ -380,8 +379,6 @@ type Kundeavtale
     | Bedrift Bedriftsnavn 
     | Privat
 ```
-
-#### _**som enums på stereoider**_
 
 ^
 Type alias for å gjøre signaturene til typene enklere å lese. Men STudent tar fortsatt en int og bedrift tar fortsatt inn en streng.
@@ -422,7 +419,7 @@ getRabatt avtale =
 ```
 
 
-#### _**Glemt en branch? kompilatoren sier fra!**_
+#### **Glemt en branch? kompilatoren sier fra!**
 
 ---
 

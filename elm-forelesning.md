@@ -7,7 +7,9 @@
 * Syntaks og språkkonsepter
 * Liten app 
 
-^ Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon for å se på det på egenhånd.
+^ 
+Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon for å se på det på egenhånd.
+
 ---
 
 ## Oss

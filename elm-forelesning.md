@@ -502,8 +502,13 @@ Elm-workshop: [ewendel.github.io/elm-workshop/](https://ewendel.github.io/elm-wo
 
 ---
 
-# Takk for oss
+# [fit] ?
+![original](./images/alm.png)
 
+---
+
+# [fit] Takk
+![original](./images/alm.png)
 
 
 

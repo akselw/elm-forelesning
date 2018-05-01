@@ -260,7 +260,7 @@ ingar =
 ---
 
 # Tre problemer:
-_1. Vi får tomme felter med dummy variabler_
+_1. Vi får tomme felter med_ dummy-_verdier_
 _2. Enkelt å skrive feil i `type`-felter_
 _3. Ikke noe hjelp fra kompilatoren_
 

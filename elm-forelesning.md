@@ -82,7 +82,7 @@ Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp la
 
 ![40%](./images/js-logo.png)
 
-^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste nettsider slik vi kjenner dem - hvis man ønsker noe mer enn en statisk nettside, er det JavaScript som fikser biffen.
+^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste moderne webapplikasjoner slik vi kjenner dem. Hvis man ønsker noe mer enn en statisk nettside med hardkodet tekst, er det JavaScript som fikser biffen.
 
 ---
 
@@ -131,7 +131,7 @@ Kan være vanskelig å velge rammeverk og biblioteker.
 
 * JS-stacken funker, men er kompleks
 * JS har beveget seg i funksjonell retning: React, Redux
-* Statisk typing har blitt maintream
+* Statisk typing har blitt mainstream
 
 ^
 Js-stacken: dvs alle de ulike rammeverkene og verktøyene man trenger for å sette opp en webappliakasjon, er kompleks.
@@ -176,7 +176,7 @@ Elm er én pakke for webapplikasjoner, som vi i en JavaScript-verden bare kan l�
 
 ### _Elm:_ Kompilerer ned til JavaScript
 
-^ Det skal sies, per i dag kompileres Elm ned til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
+^ Det skal sies, per i dag kompileres Elm ned til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet. Ikke et javascriptrammeverk, et eget språk, ikke tett knyttet til js.
 
 ---
 
@@ -368,7 +368,12 @@ type Kundeavtale
 #### **som enums på stereoider**
 
 
-^ Johanne frem til det står noe annet
+^ Johanne: Disse problemene kan vi løse i Elm ved å bruke det som heter union types.
+
+^ Union types er litt som enums, men på steroider. Og for de av dere som ikke kjenner til enums, er det en type man definerer til å være et sett med konstanter.
+
+^ Union types deklareres ved å skrive type og så navnet på union typen - her Kundeavtale.
+Og i vårt tilfelle opererer vi med tre ulike avtaler: Student, Bedrift og Privat.
 
 ---
 
@@ -381,6 +386,7 @@ type Kundeavtale
     | Privat
 ```
 
+^ Så var det jo sånn at vi hadde en studentrabatt og et bedriftsnavn på type aliaset vårt. Som gjorde at vi måtte sette dummyverdier. Men i elm, kan Union types ha parametere. Så i stedet for å ha et eget felt for studentrabatt, sender vi en int med student-typen. Og en streng til bedriftavtalen. Privatkunder har ingen ekstra informasjon, så den trenger ikke noen parametere.
 
 ---
 
@@ -397,7 +403,7 @@ type Kundeavtale
 ```
 
 ^
-Type alias for å gjøre signaturene til typene enklere å lese. Men STudent tar fortsatt en int og bedrift tar fortsatt inn en streng.
+Type alias for å gjøre signaturene til typene enklere å lese. Men Student tar fortsatt en int og bedrift tar fortsatt inn en streng.
 
 ---
 

@@ -64,20 +64,20 @@ Siden Elm er et programmeringsspråk for nettsider, er det greit å bruke noen m
 ## <Logo av HTML>
 
 ^
-Johanne:   Dette er sikkert kjent for en del av dere, men en nettside består av HTML, som vi bruker til å strukturere tekst. Det er faktisk ikke et programmeringsspråk, men markup.
+Johanne: Dette er sikkert kjent for en del av dere, men en nettside består av tre hovedkomponenter. Det første er HTML, som vi bruker til å strukturere tekst.
 
 ---
 
 ## <Logo av CSS>
 
 ^
-Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp layouten vi ønsker, få farger, rett og slett gjøre det pent. CSS hadde faktisk sitt opphav i en doktorgrad fra en fyr her på IFI, som også jobbet i CERN. Litt kult å kjenne til :)
+Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp layouten vi ønsker, få farger, rett og slett gjøre det pent. En litt gøyal greie for oss på IFI, er at CSS faktisk har sitt opphav her på instituttet, som doktorgraden til Håkon Wium Lie.
 
 ---
 
 ## <Logo av JavaScript>
 
-^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste nettsider slik vi kjenner dem - hvis man ønsker noe mer enn en statisk nettside
+^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste nettsider slik vi kjenner dem - hvis man ønsker noe mer enn en statisk nettside, er det JavaScript som fikser biffen.
 
 ---
 
@@ -108,7 +108,7 @@ Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som
 * Svært fleksibelt
 
 ^ JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme, har det ikke statiske typer, det vil si: vi får ikke klager på om vi forsøker å sende inn en int der vi forventer en streng.
-Det er et utrolig fleksibelt språk, som har ført til en voldsom innovasjon. 
+Det er et utrolig fleksibelt språk, som har ført til en voldsom innovasjon siden det først så dagens lys i 1995.
 
 ---
 
@@ -127,16 +127,17 @@ Kan være vanskelig å velge rammeverk og biblioteker.
 * Statisk typing har blitt maintream
 
 ^
+Js-stacken: dvs alle de ulike rammeverkene og verktøyene man trenger for å sette opp en webappliakasjon, er kompleks.
+Js har de siste årene beveget seg i en mer funksjonell retning, blant annet i rammeverkene React og Redux, som har blitt en slags bransjestandard her til lands. 
 Statisk typing har blitt mainstream - dvs at man legger på et rammeverk for å type javascript, som regel innebærer dette at man kompilerer javascripten, og da får feilmeldinger hvis man prøver å sende strenger til funksjoner som bare tar tall osv.
 
 ---
 
 ## Vanlige feil i JS
 
-
 ^
 Andre ting som folk irriterer seg grønne over med javascript, er:
-* Feiler runtime
+* Feiler runtime, det kompileres jo ikke, kjører bare rett i nettleseren.
 * Dårlige feilmeldinger
 
 ---
@@ -420,7 +421,7 @@ getRabatt avtale =
 ```
 
 
-#### _**glemt en branch? kompilatoren sier fra!**_
+#### _**Glemt en branch? kompilatoren sier fra!**_
 
 ---
 
@@ -460,7 +461,7 @@ Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstan
 
 ---
 
-# Live-koding
+# [fit] Live-koding
 
 
 ^ Aksel

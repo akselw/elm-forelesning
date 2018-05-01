@@ -61,21 +61,22 @@ Siden Elm er et programmeringsspråk for nettsider, er det greit å bruke noen m
 
 ---
 
-## <Logo av HTML>
+![20%](./images/html5-logo.png)
+
 
 ^
 Johanne: Dette er sikkert kjent for en del av dere, men en nettside består av tre hovedkomponenter. Det første er HTML, som vi bruker til å strukturere tekst.
 
 ---
 
-## <Logo av CSS>
+![15%](./images/css3-logo.png)
 
 ^
 Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp layouten vi ønsker, få farger, rett og slett gjøre det pent. En litt gøyal greie for oss på IFI, er at CSS faktisk har sitt opphav her på instituttet, som doktorgraden til Håkon Wium Lie.
 
 ---
 
-## <Logo av JavaScript>
+![40%](./images/js-logo.png)
 
 ^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste nettsider slik vi kjenner dem - hvis man ønsker noe mer enn en statisk nettside, er det JavaScript som fikser biffen.
 
@@ -158,7 +159,7 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 
 ---
 
-## <Logo av ELM>
+![70%](./images/elm-logo.png)
 
 ^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
 

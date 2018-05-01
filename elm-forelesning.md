@@ -4,24 +4,29 @@
 
 [.footer: Aksel Wester og Johanne Håøy Horn, BEKK Consulting AS]
 
-^	
+^
+Vår tur til å snakke om et funksjonelt språk vi digger.
+Denne delen av forelesningen skal handle om Elm.
+Mitt navn er johanne, 
 * Gikk ut av IFI i 2016
 * Tok INF2810 (og digga det)
-* Jobber i Bekk
+* Jobber i Bekk som utvikler
+
+^ <Aksel-intro>
 
 ---
 
-## Agenda
+## Plan
 
-* FP og webapps
+* Funksjonell programmering og webapplikasjoner
 * Syntaks og språkkonsepter
 * Liten app 
 
 ^ 
-* Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon til å se på det på egenhånd. 
-* Snakke litt om funksjonell programmering og webutvikling, og erfaringer vi har gjort oss i arbeidslivet.
+* Snakke litt om våre erfaringer med funksjonell programmering og webutvikling
 * Presentere syntaks og noen sentrale språkkonsepter
 * Lage en bitteliten webapp.
+* Har 45 minutter til rådighet, så vi har dessverre ikke tid til å gå veldig i dybden på Elm som språk, men forhåpentligvis får dere smaken på noe av syntaksen og eventuelt motivasjon til å se på det på egenhånd. 
 
 ---
 
@@ -56,8 +61,7 @@
 ## <Bilde av en nettside>
 
 ^ 
-Johanne: I Bekk jobber de aller fleste av oss med å utvikle datasystemer, og da er det gjerne en eller annet web- eller mobilløsning med i miksen.
-Siden Elm er et programmeringsspråk for nettsider, er det greit å bruke noen minutter på å snakke om hva en nettside består av, for å forstå hvilken verden Elm befinner seg i.
+Johanne: Elm er et programmeringsspråk for nettsider, er det greit å bruke noen minutter på å snakke om hva en nettside består av, for å forstå hvilken verden Elm befinner seg i.
 
 ---
 
@@ -103,12 +107,14 @@ Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som
 
 ### JavaScript
 
+* Funksjonelt og objektorientert
 * Ikke kompilert
 * Dynamisk typet
-* Funksjonelt og objektorientert
 * Svært fleksibelt
 
-^ JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme, har det ikke statiske typer, det vil si: vi får ikke klager på om vi forsøker å sende inn en int der vi forventer en streng.
+^ 
+Funksjonelt og objektorientert.
+JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme er det dynamisk typer, det vil si: vi får ikke klager på om vi forsøker å sende inn en int der vi forventer en streng.
 Det er et utrolig fleksibelt språk, som har ført til en voldsom innovasjon siden det først så dagens lys i 1995.
 
 ---
@@ -149,19 +155,28 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 
 `Cannot read property 'getFullYear' of undefined`
 
----
-
-`Cannot read property 'beskrivelse' of undefined`
-
 --- 
 
-`undefined is not an object`
+`undefined is not a function`
 
 ---
 
 ![70%](./images/elm-logo.png)
 
-^ Johanne: Elm er et alternativ til JavaScript. Og per nå kompileres også Elm til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
+^ Johanne: Elm er et alternativ til JavaScript
+
+---
+
+### _Elm:_ Laget for webapplikasjoner
+
+^
+Elm er én pakke for webapplikasjoner, som vi i en JavaScript-verden bare kan løse ved å kombinere flere rammeverk som React, redux, immutable.js med mer.
+
+---
+
+### _Elm:_ Kompilerer ned til JavaScript
+
+^ Det skal sies, per i dag kompileres Elm ned til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet fordi det er ikke tett knyttet til javascript
 
 ---
 
@@ -169,19 +184,7 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 
 ---
 
-### _Elm:_ Laget for å lage webapps
-
----
-
 ### _Elm:_ Lover “ingen kjøretidsfeil”
-
----
-
-### _Elm:_ Fokuserer på brukervennlighet
-
----
-
-### _Elm:_ Gode kompilatorfeilmeldinger
 
 ^
 Null har jo blitt omtalt som the billion dollar mistake - dukket først opp i cobol.
@@ -189,10 +192,23 @@ JavaScript har gjort det enda vanskeligere for seg selv med å slenge undefined 
 
 ---
 
+### _Elm:_ Gode kompilatorfeilmeldinger
+
+^ Skal se eksempler på dette senere.
+
+---
+
+### _Elm:_ Fokuserer på brukervennlighet
+
+^
+Både i språket selv, men også i flyten rundt: feilmeldinger, enkelhet med å komme igang.
+
+---
+
 ### _Elm:_ Tydelig, gjennomgående filosofi
 
 ^ 
-Èn måte å lage webapps på, ikke plukk og miks mellom ulike rammeverk.
+Èn måte å lage webapps på, en konsensus om hva som er den beste måten.
 Lett å lære, enkelt å bruke. 
 
 ---

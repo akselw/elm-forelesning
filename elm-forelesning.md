@@ -11,25 +11,37 @@
 
 ## Oss
 
-Gikk på IFI, tok INF2810, jobber i bekk
+* Gikk ut av IFI i 2016
+* Tok INF2810 (og digga det)
+* Jobber i Bekk
 
 ---
 
-## FP i arbeidslivet
+## Funksjonell programmering i arbeidslivet
 
-God kode
-Brukervennlig, testbar, lesbar kode
-Scheme: akademisk, men prinsippene er universelle
+* God kode
+* Brukervennlig, testbar, lesbar kode
+* Vi bruker kanskje ikke Scheme, men prinsippene er universelle
 
-^ Aksel
+^ Aksel: Da jeg skulle velge fag på våren andre året så fikk jeg høre at funksjonell programmering var et kult fag, selv om det ikke er så relevant for arbeidslivet. Men det viste seg å ikke stemme i det hele tatt. Funksjonell programmering er nok et av de fagene jeg har hatt mest nytte av etter at jeg begynte å jobbe.
+
+^ Funksjonell programmering har fått mer og mer fotfeste de siste årene, og man ser at prinsippene i funksjonell programmering er anvendelige på mange forskjellige bruksområder.
+
+^ Noen av grunnene til det er at om man skriver funksjonelt så skriver man kode uten sideeffekter, som gjør det lett å resonnere om hva et program gjør ved å se på koden.
+
+^ Funksjonell kode er også lett å teste og lett å lese, og det blir ofte mindre kode.
 
 ---
 
 ## Ulike FP-språk
-* Lisp og ML: overordnete
-* Peke til de ulike språkene som likner.
+* Lisp-familien: Scheme, Clojure
+* ML-familien: Haskell, Elm
 
-^ Aksel
+^ Aksel: Scheme er et språk i Lisp-familien av funksjonelle språk, som ofte kjennetegnes ved at det er dynamisk typet (og har masse parenteser)
+
+^ Elm er en del av ML-familien, som har veldig mange av de samme konseptene, men med et typesystem i tillegg
+
+^ Men i motsetning til typesystemene dere kanskje er kjent med fra Java, så er typesystemene i ML-språk både mye kraftigere, og mye mindre i veien. Det hjelper deg bare å unngå feil.
 
 ---
 
@@ -261,7 +273,7 @@ ingar =
 
 # Tre problemer:
 _1. Vi får tomme felter med_ dummy-_verdier_
-_2. Enkelt å skrive feil i `type`-felter_
+_2. Enkelt å skrive feil i `type`-feltet_
 _3. Ikke noe hjelp fra kompilatoren_
 
 ---

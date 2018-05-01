@@ -82,14 +82,14 @@ Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp la
 
 ---
 
-### Tegning av fyr med scheme-logo i tankeboble.
+### <Bilde av fyr med scheme-logo i tankeboble.>
 
 ^ 
 For JavaScript ble laget av en fyr som heter Brendan Eich. Og han ville egentlig lage Scheme i nettleseren.
 
 ---
 
-### Tegning av forretningsfolk med java-logo i tankeboble.
+### <Bilde av forretningsfolk med java-logo i tankeboble.>
 
 ^ Men Java var veldig i vinden den gangen, og netscape navigator, nettleseren han skulle lage dette språket for, ville at han skulle ta språket i en mer objektorientert retning.
 Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som hadde lisensrettighetene til java, om at de fikk lov til å bruke java i navnet til dette nye programmeringsspråket.
@@ -276,14 +276,14 @@ spillerposisjon = (0,0)
 type alias Kunde =
     { navn: String
     , alder: Int,
-    , type: String
+    , avtale: String
     }
 
 ingar : Kunde
 ingar =
     { navn = "Ingar"
     , alder = 24
-    , type = "Student"
+    , avtale = "Student"
     }   
 ```
 
@@ -295,7 +295,7 @@ ingar =
 type alias Kunde =
     { navn: String
     , alder: Int,
-    , type: String
+    , avtale: String
     , studentRabatt: Int
     }
 
@@ -303,7 +303,7 @@ ingar : Kunde
 ingar =
     { navn = "Ingar"
     , alder = 24
-    , type = "Student",
+    , avtale = "Student",
     , studentRabatt = 50
     }   
 ```
@@ -316,7 +316,7 @@ ingar =
 type alias Kunde =
     { navn: String
     , alder: Int,
-    , type: String
+    , avtale: String
     , studentRabatt: Int
     , bedriftsnavn: String
     }
@@ -325,7 +325,7 @@ ingar : Kunde
 ingar =
     { navn = "Ingar"
     , alder = 24
-    , type = “Bedrift”,
+    , avtale = “Bedrift”,
     , studentRabatt = 0
     , bedriftsnavn = "BEKK Consulting"
     }   
@@ -454,10 +454,9 @@ Likner litt på hvordan vi bruker komponenter i React.
 
 ### The Elm Architecture
 
-Bilde
+## <Bilde>
 
 ^
-
 Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstand på i JavaScript-applikasjoner er inspirert av måten Elm hån
 
 ---

@@ -184,7 +184,7 @@ x = 42
 
 kunde : { navn : String, alder : Int }
 kunde = 
-    { navn = "Erik"
+    { navn = "Ingar"
     , alder = 24
     }
 ```
@@ -199,9 +199,9 @@ type alias Kunde =
     , alder: Int
     }
 
-erik : Kunde
-erik = 
-    { navn = "Erik"
+ingar : Kunde
+ingar =
+    { navn = "Ingar"
     , alder = 24
     }   
 ```
@@ -213,9 +213,10 @@ erik =
 # Type alias
 
 ```elm
-type alias Coords = (Int, Int)
-playerPosition : Coords
-playerPosition = (0,0)
+type alias Koordinater = (Int, Int)
+
+spillerposisjon : Koordinater
+spillerposisjon = (0,0)
 ```
 
 ---
@@ -229,9 +230,9 @@ type alias Kunde =
     , type: String
     }
 
-erik : Kunde
-erik = 
-    { navn = "Erik"
+ingar : Kunde
+ingar =
+    { navn = "Ingar"
     , alder = 24
     , type = "Student"
     }   
@@ -249,9 +250,9 @@ type alias Kunde =
     , studentRabatt: Int
     }
 
-erik : Kunde
-erik = 
-    { navn = "Erik"
+ingar : Kunde
+ingar =
+    { navn = "Ingar"
     , alder = 24
     , type = "Student",
     , studentRabatt = 50
@@ -271,9 +272,9 @@ type alias Kunde =
     , bedriftsnavn: String
     }
 
-erik : Kunde
-erik = 
-    { navn = "Erik"
+ingar : Kunde
+ingar =
+    { navn = "Ingar"
     , alder = 24
     , type = “Bedrift”,
     , studentRabatt = 0
@@ -284,7 +285,7 @@ erik =
 ---
 
 # Tre problemer:
-_1. Vi får tomme felter med dummy variabler_
+_1. Vi får tomme felter med_ dummy-_verdier_
 _2. Enkelt å skrive feil i `type`-felter_
 _3. Ikke noe hjelp fra kompilatoren_
 
@@ -293,7 +294,7 @@ _3. Ikke noe hjelp fra kompilatoren_
 # Union Types
 
 ```elm
-type KundeKlasse
+type Kunde
     = Student
     | Bedrift
     | Privat
@@ -309,7 +310,7 @@ type KundeKlasse
 # Union Types
 
 ```elm
-type KundeKlasse
+type Kunde
     = Student Int
     | Bedrift String 
     | Privat
@@ -325,7 +326,7 @@ type KundeKlasse
 type alias Rabatt = Int
 type alias Bedriftsnavn = String
 
-type KundeKlasse
+type Kunde
     = Student Rabatt
     | Bedrift Bedriftsnavn 
     | Privat
@@ -338,9 +339,9 @@ type KundeKlasse
 # Pattern Matching
 
 ```elm
-type KundeKlasse = Student Rabatt | Bedrift Bedriftsnavn | Privat
+type Kunde = Student Rabatt | Bedrift Bedriftsnavn | Privat
 
-getRabatt : KundeKlasse -> Rabatt
+getRabatt : Kunde -> Rabatt
 getRabatt kunde =
     case kunde of
         Student rabatt ->
@@ -406,6 +407,19 @@ $ create-elm-app min-forste-app
 $ cd min-forste-app
 $ elm-app start
 ```
+
+---
+
+# Andre ressurser
+
+Elm-miljøet har en slack: [elmlang.herokuapp.com](https://elmlang.herokuapp.com)
+
+Elm-workshop: [ewendel.github.io/elm-workshop/](https://ewendel.github.io/elm-workshop/)
+
+
+^ Elm-miljøet har en slack der alle kan bli med. Alle er veldig vennlige, og de har en policy om at ingen spørsmål er dumme, og alle spørsmål skal få svar. De har til og med en egen beginner-kanal, der det er masse bra hjelp å få.
+
+^ Noen kollegaer av oss i Bekk har også laget en workshop i elm, hvor man lager et lite spill, som de har reist land og strand rundt med. Både i Norge og i utlandet.
 
 ---
 

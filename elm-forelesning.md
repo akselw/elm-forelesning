@@ -5,8 +5,8 @@
 [.footer: Aksel Wester og Johanne Håøy Horn, Bekk Consulting AS]
 
 ^
-Vår tur til å snakke om et funksjonelt språk vi digger.
-Denne delen av forelesningen skal handle om Elm.
+Vi har gleden av å starte denne todelte gjesteforelesningen.
+Denne delen skal handle om Elm, et helt nydelig funksjonelt programmeringsspråk jeg håper dere også snart får sansen for.
 Mitt navn er johanne, <Aksel>
 * Gikk ut av IFI i 2016
 * Tok INF2810 (og digga det)
@@ -56,7 +56,7 @@ Mitt navn er johanne, <Aksel>
 
 ---
 
-## <Bilde av en nettside>
+![](./images/desk.jpg)
 
 ^ 
 Johanne: Elm er et programmeringsspråk for nettsider, er det greit å bruke noen minutter på å snakke om hva en nettside består av, for å forstå hvilken verden Elm befinner seg i.
@@ -417,10 +417,12 @@ type Kundeavtale
 
 ^ Johanne: Disse problemene kan vi løse i Elm ved å bruke det som heter union types.
 
-^ Union types er litt som enums, men på steroider. Og for de av dere som ikke kjenner til enums, er det en type man definerer til å være et sett med konstanter.
+^ Union types er litt som enums, men mye mye kraftigere. Og for de av dere som ikke kjenner til enums, er det en type man definerer til å være et sett med konstanter.
 
 ^ Union types deklareres ved å skrive type og så navnet på union typen - her Kundeavtale.
 Og i vårt tilfelle opererer vi med tre ulike avtaler: Student, Bedrift og Privat.
+
+^ Det betyr da at det bare er tre gyldige verdier når vi bruker typen Kundeavtale: Student eller Bedrift eller Privat, og alt annet vil kompilatoren klage på.
 
 ---
 
@@ -433,7 +435,7 @@ type Kundeavtale
     | Privat
 ```
 
-^ Så var det jo sånn at vi hadde en studentrabatt og et bedriftsnavn på type aliaset vårt. Som gjorde at vi måtte sette dummyverdier. Men i elm, kan Union types ha parametere. Så i stedet for å ha et eget felt for studentrabatt, sender vi en int med student-typen. Og en streng til bedriftavtalen. Privatkunder har ingen ekstra informasjon, så den trenger ikke noen parametere.
+^ Så var det jo sånn at vi hadde en studentrabatt og et bedriftsnavn på type aliaset vårt. Som gjorde at vi måtte sette dummyverdier. Men i elm, kan Union types ha argumenter. Så i stedet for å ha et eget felt for studentrabatt, sender vi en int med student-typen. Og en streng til bedriftavtalen. Privatkunder har ingen ekstra informasjon, så den trenger ikke noen argumenter.
 
 ---
 
@@ -469,6 +471,10 @@ ingar =
     }   
 ```
 
+^
+Tilbake til eksempelet med kunde-typen, har vi nå erstattet strengen med vår nye type union. 
+Ikke lenger unødvendige og forvirrende felter, bare den informasjonen vi trenger.
+
 ---
 
 # Pattern Matching
@@ -490,6 +496,13 @@ getRabatt avtale =
 
 #### **Glemt en branch? kompilatoren sier fra!**
 
+
+^
+Når vi ønsker å håndtere de ulike tilfellene vi har definert at en union type kan ha, bruker vi det som heter pattern matching. 
+Likner litt på en switch, som man finner i blant annet java, c# og javascript, men hjelper oss mye mer. For her må vi håndtere alle tilfeller, det holder ikke å bare plukke ut de vi tror vi trenger å håndtere.
+
+^Virker kanskje litt voldsomt, men det å måtte håndtere alle brancher, og få hjelp til kompilatoren, hjelper oss med å skrive kode som fungerer, også etter refaktoreringer og utvidelser.
+
 ---
 
 # HTML
@@ -500,6 +513,9 @@ getRabatt avtale =
     <h1>Min elm-app!</h1>
 </div>
 ```
+
+^
+Som jeg nevnte tidligere, er elm en fullstendig pakke for webapplikasjoner - selv om man som regel fortsatt skriver vanlig css. Og elm har dermed sin egen måte å skrive html på.
 
 ---
 
@@ -513,8 +529,8 @@ div []
 ```
 
 ^ 
-Alle html-elementene har sin egen funksjon i elm, som tar inn to argumenter: en liste med attributter, der vi typisk setter cssen. Og en liste med underelementer.
-Likner litt på hvordan vi bruker komponenter i React.
+Overordnet, er strukturen veldig lik den vi har i html, og attributter og elementer like så. Men html-elementer er nå egne funksjoner i elm. Det vil sei at div er en funksjon, img er en funksjon, h1 (header) er en funksjon osv. Og hver av html-elementene tar inn to argumenter: en liste med attributter, der vi typisk setter cssen. Og en liste med underelementer.
+Ellers likner måten vi forholder oss til html i elm litt på hvordan vi bruker komponenter i React.
 
 ---
 

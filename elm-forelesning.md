@@ -93,8 +93,8 @@ For JavaScript ble laget av en fyr som heter Brendan Eich. Og han ville egentlig
 
 ![80%](./images/forretningsfolk.jpg)
 
-^ Men Java var veldig i vinden den gangen, og netscape navigator, nettleseren han skulle lage dette språket for, ville at han skulle ta språket i en mer objektorientert retning.
-Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som hadde lisensrettighetene til java, om at de fikk lov til å bruke java i navnet til dette nye programmeringsspråket.
+^ Men Java var veldig i vinden den gangen, og netscape, nettleseren han skulle lage dette språket for, ville at han skulle ta språket i en mer objektorientert retning.
+Og det gjorde han. Ikke minst inngikkk netscape en avtale med sun, som hadde lisensrettighetene til java, om at de fikk lov til å bruke java i navnet til dette nye programmeringsspråket.
 
 ---
 ## Java != JavaScript

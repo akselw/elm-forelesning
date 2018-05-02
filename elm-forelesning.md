@@ -225,7 +225,26 @@ increment x =
 five = increment 4
 ```
 
-^ Aksel frem til det står noe annet
+^ Aksel: Dette er elm. Her har vi en funksjonsdefinisjon, og binding av en verdi til et navn.
+
+^ increment er en funksjon som tar ett argument: `x`, og returnerer `x + 1`. Siden elm er rent funksjonelt, og vi bare kaller funksjoner for returnverdien så har vi ikke noe return-ord. Det er resultatet av evalueringen som returneres, akkurat som i scheme
+
+^ Under binder vi resultatet av å kalle increment med argumentet 4, til navnet five
+
+---
+
+# Funksjoner & typeinferens
+
+```elm
+increment x =
+    x + 1
+
+five = increment 4
+```
+
+^ Selv om elm har et typesystem så er man ikke pålagt å legge på typer, men man får fortsatt hjelp av kompilatoren. Så her forstår elm at increment tar et tall som argument og returnerer et tall, på grunn av pluss-operatoren.
+
+^ Så dersom vi hadde prøvd å kalle increment med en streng så hadde vi ikke fått kompilere
 
 ---
 
@@ -241,6 +260,12 @@ five : Int
 five = increment 4
 ```
 
+^ Men som oftest så har vi lyst til å legge på typesignaturer, og det gjør vi på denne måten.
+
+^ Kolon betyr "har typen", så øverst står det at increment har typen int-til-int, altså er det en funksjon som tar inn en int og returnerer en int
+
+^ five derimot er bare en int. Det er ikke noen piler fordi five ikke er noen funksjon
+
 ---
 
 # Records
@@ -252,6 +277,10 @@ kunde =
     , alder = 24
     }
 ```
+
+^ For mer komplekse datatyper har elm bl.a. records. En record er litt som et objekt i javascript eller et HashMap i java. Her lager vi en record `kunde`, som har to felter: `navn` med verdi `Ingar` og `alder` med verdi `24`
+
+^ I tillegg så har vi en typesignatur på `kunde` som sier at dette er en record, der `navn` er en streng, og `alder` er en int.
 
 ---
 
@@ -270,6 +299,10 @@ ingar =
     }   
 ```
 
+^ Fordi vi vil at typesystemet skal hjelpe oss, og ikke være i veien, så har vi noe som heter typealias, som lar oss definere navn på typer. Det gjør vi sånn at vi kan definere typen vår én gang, og så slippe å skrive den flere ganger.
+
+^ Så her definerer vi typealiaset `Kunde` og sier at det er det samme som et record med to felter, `navn` som er en streng, `alder` som er en int.
+
 #### **Lar oss definere nye typer**
 
 ---
@@ -280,8 +313,14 @@ ingar =
 type alias Koordinater = (Int, Int)
 
 spillerposisjon : Koordinater
-spillerposisjon = (0,0)
+spillerposisjon = (0, 0)
 ```
+
+^ Her har vi et eksempel til på et typealias, der vi sier at vi kaller et par, et tuppel, av inter for Koordinater.
+
+^ Og så sier vi at spillerposisjon har typen Koordinater, og er 0-0
+
+^ Tupler defineres med parenteser
 
 ---
 
@@ -302,6 +341,10 @@ ingar =
     }   
 ```
 
+^ En ting som er fint med å bruke typealias er at vi kan endre typealiaset et sted, og så sier kompilator fra alle steder vi må oppdatere programmet vårt.
+
+^ Her har vi lagt til et felt `avtale` i recorden, som er en streng, for å vise at dette er en studentkunde.
+
 ---
 
 # Type alias
@@ -320,8 +363,10 @@ ingar =
     , alder = 24
     , avtale = "Student",
     , studentRabatt = 50
-    }   
+    }
 ```
+
+^ Videre så kan vi se for oss at vi legger til et felt `studentRabatt` i typealiaset vårt
 
 ---
 
@@ -343,8 +388,10 @@ ingar =
     , avtale = "Bedrift",
     , studentRabatt = 0
     , bedriftsnavn = “Bekk Consulting"
-    }   
+    }
 ```
+
+^ Men hva nå da? Nå har vi laget en bedriftskunde, som vi ser på `avtale`-feltet, og vi har lagt til et felt i typealiaset som heter `bedriftsnavn`
 
 ---
 

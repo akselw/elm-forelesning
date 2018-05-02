@@ -46,9 +46,8 @@ Mitt navn er johanne,
 
 ---
 
-## Funksjonelle programmeringsspråk
-
-<Tegning av FP-familiene>
+![63% original](./images/lisp-familien.jpg)
+![60% original](./images/ml-familien.jpg) 
 
 ^ Aksel: Scheme er et språk i Lisp-familien av funksjonelle språk, som ofte kjennetegnes ved at det er dynamisk typet (og har masse parenteser)
 

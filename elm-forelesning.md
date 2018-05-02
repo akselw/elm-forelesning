@@ -535,6 +535,7 @@ Likner litt på en switch, som man finner i blant annet java, c# og javascript, 
 Som jeg nevnte tidligere, er elm en fullstendig løsning for webapplikasjoner - selv om man som regel fortsatt skriver vanlig css. Og elm har dermed sin egen måte å skrive html på.
 
 ^ Det er kanskje noen av dere som ikke har sett html før. Men her har vi altså et div-element med to underelementer: et bilde og en header.
+
 ---
 
 # HTML

@@ -388,7 +388,7 @@ ingar =
     , alder = 24
     , avtale = "Bedrift",
     , studentRabatt = 0
-    , bedriftsnavn = “Bekk Consulting"
+    , bedriftsnavn = "Bekk Consulting"
     }
 ```
 

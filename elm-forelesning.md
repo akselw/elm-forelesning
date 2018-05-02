@@ -85,14 +85,14 @@ Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp la
 
 ---
 
-### <Bilde av fyr med scheme-logo i tankeboble.>
+![80%](./images/brendaneich.jpg)
 
 ^ 
 For JavaScript ble laget av en fyr som heter Brendan Eich. Og han ville egentlig lage Scheme i nettleseren.
 
 ---
 
-### <Bilde av forretningsfolk med java-logo i tankeboble.>
+![80%](./images/forretningsfolk.jpg)
 
 ^ Men Java var veldig i vinden den gangen, og netscape navigator, nettleseren han skulle lage dette språket for, ville at han skulle ta språket i en mer objektorientert retning.
 Og det gjorde han. Ikke minst inngikkk netscape navigator en avtale med sun, som hadde lisensrettighetene til java, om at de fikk lov til å bruke java i navnet til dette nye programmeringsspråket.

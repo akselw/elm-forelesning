@@ -9,7 +9,7 @@ Vi har gleden av å starte denne todelte gjesteforelesningen.
 Denne delen skal handle om Elm, et helt nydelig funksjonelt programmeringsspråk jeg håper dere også snart får sansen for.
 Mitt navn er johanne, <Aksel>
 * Gikk ut av IFI i 2016
-* Tok INF2810 (og digga det)
+* Tok INF2810 (og digga det). Faktisk var vi tre som holder forelesning i dag alltid på samme gruppe, leverte obliger og gjorde det forferdelig dårlig på påskequizen sammen. (Har de fortsatt påskequiz). 
 * I dag: Jobber i Bekk som utviklere
 
 
@@ -112,7 +112,7 @@ Og det gjorde han. Ikke minst inngikkk netscape en avtale med sun, som hadde lis
 
 ^ 
 Funksjonelt og objektorientert.
-JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme er det dynamisk typer, det vil si: vi får ikke klager på om vi forsøker å sende inn en int der vi forventer en streng.
+JavaScript kompileres ikke, det kjører bare rett i nettleseren. Som scheme er det dynamisk typer, det vil si: vi kan sende hva som helst inn til en funksjon, uten at vi vil få noen klager på det, før vi åpner nettsiden og kanskje har fått en kjørefeil.
 Det er et utrolig fleksibelt språk, som har ført til en voldsom innovasjon siden det først så dagens lys i 1995.
 
 ---
@@ -134,7 +134,7 @@ Kan være vanskelig å velge rammeverk og biblioteker.
 ^
 Js-stacken: dvs alle de ulike rammeverkene og verktøyene man trenger for å sette opp en webappliakasjon, er kompleks.
 Js har de siste årene beveget seg i en mer funksjonell retning, blant annet i rammeverkene React og Redux, som har blitt en slags bransjestandard her til lands. 
-Statisk typing har blitt mainstream - dvs at man legger på et rammeverk for å type javascript, som regel innebærer dette at man kompilerer javascripten, og da får feilmeldinger hvis man prøver å sende strenger til funksjoner som bare tar tall osv.
+Statisk typing har blitt mainstream - dvs at man legger på et rammeverk for å type javascript, som regel innebærer dette at man kompilerer javascripten, og da får feilmeldinger hvis man prøver å bruke typer feil.
 
 ---
 
@@ -489,7 +489,7 @@ ingar =
 ```
 
 ^
-Tilbake til eksempelet med kunde-typen, har vi nå erstattet strengen med vår nye type union. 
+Tilbake til eksempelet med kunde-typen, har vi nå erstattet strengen med vår nye union type
 Ikke lenger unødvendige og forvirrende felter, bare den informasjonen vi trenger.
 
 ---
@@ -532,8 +532,9 @@ Likner litt på en switch, som man finner i blant annet java, c# og javascript, 
 ```
 
 ^
-Som jeg nevnte tidligere, er elm en fullstendig pakke for webapplikasjoner - selv om man som regel fortsatt skriver vanlig css. Og elm har dermed sin egen måte å skrive html på.
+Som jeg nevnte tidligere, er elm en fullstendig løsning for webapplikasjoner - selv om man som regel fortsatt skriver vanlig css. Og elm har dermed sin egen måte å skrive html på.
 
+^ Det er kanskje noen av dere som ikke har sett html før. Men her har vi altså et div-element med to underelementer: et bilde og en header.
 ---
 
 # HTML

@@ -7,12 +7,11 @@
 ^
 Vår tur til å snakke om et funksjonelt språk vi digger.
 Denne delen av forelesningen skal handle om Elm.
-Mitt navn er johanne, 
+Mitt navn er johanne, <Aksel>
 * Gikk ut av IFI i 2016
 * Tok INF2810 (og digga det)
-* Jobber i Bekk som utvikler
+* I dag: Jobber i Bekk som utviklere
 
-^ <Aksel-intro>
 
 ---
 
@@ -68,7 +67,7 @@ Johanne: Elm er et programmeringsspråk for nettsider, er det greit å bruke noe
 
 
 ^
-Johanne: Dette er sikkert kjent for en del av dere, men en nettside består av tre hovedkomponenter. Det første er HTML, som vi bruker til å strukturere tekst.
+Johanne: Dette er sikkert kjent for en del av dere, men nettsider er bygget på HTML, som vi bruker til å skrive og strukturere tekst.
 
 ---
 
@@ -158,6 +157,10 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 
 `undefined is not a function`
 
+^
+Null har jo blitt omtalt som the billion dollar mistake - dukket først opp i cobol.
+JavaScript har gjort det enda vanskeligere for seg selv med å slenge undefined med I miksen
+
 ---
 
 ![70%](./images/elm-logo.png)
@@ -184,10 +187,8 @@ Elm er én pakke for webapplikasjoner, som vi i en JavaScript-verden bare kan l�
 ---
 
 ### _Elm:_ Lover “ingen kjøretidsfeil”
-
 ^
-Null har jo blitt omtalt som the billion dollar mistake - dukket først opp i cobol.
-JavaScript har gjort det enda vanskeligere for seg selv med å slenge undefined med I miksen - men Elm har hverken null eller undefined.
+Elm har hverken null eller undefined.
 
 ---
 

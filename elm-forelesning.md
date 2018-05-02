@@ -63,7 +63,7 @@ Johanne: Elm er et programmeringsspråk for nettsider, er det greit å bruke noe
 
 ---
 
-![20%](./images/html5-logo.png)
+![21%](./images/html5-logo.png)
 
 
 ^
@@ -522,6 +522,55 @@ Likner litt på en switch, som man finner i blant annet java, c# og javascript, 
 
 ---
 
+# Maybe
+
+```elm
+type Maybe a = Just a | Nothing
+```
+^ Aksel: Så skal vi snakke om Maybe. Dette er måten elm slipper å ha null, undefined eller lignende
+
+^ På definisjonen så ser vi at Maybe er en unionstype, som enten er Just eller Nothing. Den a-en der betyr bare en vilkårlig type.
+
+---
+
+# Maybe
+
+```elm
+type Maybe a = Just a | Nothing
+
+type alias Game = 
+    { highscore: Maybe Int
+    }
+```
+
+^ Her ser vi at vi definerer et spill med en highscore som har typen Maybe Int. Det vil si at highscore _enten_ er Just med en int, _eller_ Nothing, hvis det ikke finnes noen highscore.
+
+^ Som en optional, bare at man er tvunget til å ta hensyn til tilfellet der verdien ikke er tilstede
+
+---
+
+# Maybe
+
+```elm
+type Maybe a = Just a | Nothing
+
+type alias Game = 
+    { highscore: Maybe Int
+    }
+
+getHighscore : Game -> String
+getHighscore game =
+    case game.highscore of
+        Just score ->
+            toString score
+        Nothing ->
+            "No highscore"
+```
+
+^ Her ser vi hvordan det brukes, i en case. Og det kule med elm er at man _må_ ta hensyn til alle tilfeller i en case, så det er ikke mulig å bare anta at highscore er der, og risikere en NullPointerException eller lignende. Vi blir tvunget til å sjekke for å få tilgang til verdien.
+
+---
+
 # HTML
 
 ```html
@@ -551,19 +600,62 @@ Ellers likner måten vi forholder oss til html i elm litt på hvordan vi bruker 
 
 ---
 
-### The Elm Architecture
+## The Elm Architecture
 
-## <Bilde>
+^ Aksel: Det siste vi skal snakke om før vi skal live-kode er The Elm Architecture.
 
 ^ Elm-arkitekturen er måten vi strukturer programmene våre i elm. Arkitekturen består av 3 elementer, en modell, et view og en update-funksjon. Dette vil virke kjent for dere som har brukt redux i javascript, for Elm var faktisk en viktig innflytelse på Dan Abramov som lagde Redux.
 
+---
+
+![fit](./images/tea-model.jpg)
+
 ^ Model: tilstanden til programmet
 
-^ View: en funksjon som tar modellen som argumenter og lager et brukergrensesnitt basert på det
+^ Modellen inneholder all data vi har i programmet, og er det eneste stedet den dataen lever
 
-^ Update: en funksjon som tar imot beskjeder og en modell og returnerer en ny modell
+---
 
-^ Starter med en modell som lager et view, view sender beskjeder (f.eks. ved at brukeren trykker på en knapp), og update tar imot beskjeden og lager en ny modell, som igjen oppdaterer viewet, som kan sende beskjeder, og sånn går det i en evig rund-dans
+![fit](./images/tea-view.jpg)
+
+^ View: en funksjon som tar modellen som argument og lager et brukergrensesnitt basert på det
+
+---
+
+![fit](./images/tea-update.jpg)
+
+^ Update: en funksjon som tar imot beskjeder OG en modell, og returnerer en ny modell
+
+---
+
+![fit](./images/tea-all.jpg)
+
+^ Starter med en modell som lager et view, view sender beskjeder (f.eks. ved at brukeren trykker på en knapp), og update tar imot beskjeden og lager en ny modell, som igjen oppdaterer viewet, som kan sende beskjeder, og sånn går det, i en evig rund-dans
+
+---
+
+# The Elm Architecture
+
+```elm
+type alias Model = ...
+type Msg = Forskjellige | Beskjeder
+
+view : Model -> Html Msg
+
+update : Msg -> Model -> Model
+
+```
+
+^ Her er signaturene til de forskjellige elementene til elm-arkitekturen
+
+^ Vi har et typealias `Model` som vi definerer selv, og unionstypen Msg som vi også definerer selv
+
+^ Så har vi de to funksjonene, `view` som tar modellen som argument og returnerer Html. Og der ser vi også at det står Html Msg, fordi vi definerer at Html’en vår kan sende Msg-typen.
+
+^ Til slutt har vi update funksjonen som tar to argumenter: `Msg`-typen vi har definert, og modellen vi har definert, og så returnerer funksjonen en ny modell
+
+^ Det virker kanskje litt rart at update har piler mellom argumentene også, i stedet for f.eks. komma, men det gir faktisk veldig mening, selv om vi ikke har tid til å forklare hvorfor i dag.
+
 
 ---
 

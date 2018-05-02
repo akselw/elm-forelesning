@@ -38,9 +38,9 @@ Mitt navn er johanne,
 
 ^ Aksel: Da jeg skulle velge fag på våren andre året så fikk jeg høre at funksjonell programmering var et kult fag, selv om det ikke er så relevant for arbeidslivet. Men det viste seg å ikke stemme i det hele tatt. Funksjonell programmering er nok et av de fagene jeg har hatt mest nytte av etter at jeg begynte å jobbe.
 
-^ Funksjonell programmering har fått mer og mer fotfeste de siste årene, og man ser at prinsippene i funksjonell programmering er anvendelige på mange forskjellige bruksområder.
+^ Funksjonell programmering som konsept har fått mer og mer fotfeste de siste årene, og man ser at prinsippene i funksjonell programmering er anvendelige på mange forskjellige bruksområder.
 
-^ Noen av grunnene til det er at om man skriver funksjonelt så skriver man kode uten sideeffekter, som gjør det lett å resonnere om hva et program gjør ved å se på koden.
+^ Noen av grunnene til det, er at hvis man skriver funksjonelt, så skriver man kode uten sideeffekter, som gjør det lett å resonnere om hva et program gjør ved å se på koden.
 
 ^ Funksjonell kode er også lett å teste og lett å lese, og det blir ofte mindre kode.
 
@@ -49,11 +49,11 @@ Mitt navn er johanne,
 ![63% original](./images/lisp-familien.jpg)
 ![60% original](./images/ml-familien.jpg) 
 
-^ Aksel: Scheme er et språk i Lisp-familien av funksjonelle språk, som ofte kjennetegnes ved at det er dynamisk typet (og har masse parenteser)
+^ Aksel: Scheme er et språk i Lisp-familien av funksjonelle språk, og det er Clojure også. Lisp-familien kjennetegnes som oftest ved at språkene er dynamisk typet (og også at de har masse parenteser)
 
-^ Elm er en del av ML-familien, som har veldig mange av de samme konseptene, men med et typesystem i tillegg
+^ Elm er en del av ML-familien, som har veldig mange av de samme konseptene som språk i Lisp-familien, men med et typesystem i tillegg
 
-^ Men i motsetning til typesystemene dere kanskje er kjent med fra Java, så er typesystemene i ML-språk både mye kraftigere, og mye mindre i veien. Det hjelper deg bare å unngå feil.
+^ Men i motsetning til typesystemene dere kanskje er kjent med fra Java, så er typesystemene i ML-språk både mye kraftigere, og mye mindre i veien. Det hjelper deg egentlig bare å unngå feil.
 
 ---
 
@@ -216,6 +216,14 @@ Lett å lære, enkelt å bruke.
 
 ---
 
+# Elm
+
+^ Aksel: Da er det på tide å se litt elm. Vi skal gå gjennom den grunnleggende syntaksen, og noen nye konsepter dere kanskje ikke har sett i programmeringsspråk før, og så skal vi se på hvordan vi bygger opp programmer i elm.
+
+^ Til slutt skal vi live-kode en liten interaktiv nettside
+
+---
+
 # Funksjoner & typeinferens
 
 ```elm
@@ -225,7 +233,7 @@ increment x =
 five = increment 4
 ```
 
-^ Aksel: Dette er elm. Her har vi en funksjonsdefinisjon, og binding av en verdi til et navn.
+^ Dette er elm. Her har vi en funksjonsdefinisjon, og binding av en verdi til et navn.
 
 ^ increment er en funksjon som tar ett argument: `x`, og returnerer `x + 1`. Siden elm er rent funksjonelt, og vi bare kaller funksjoner for returnverdien så har vi ikke noe return-ord. Det er resultatet av evalueringen som returneres, akkurat som i scheme
 
@@ -265,6 +273,8 @@ five = increment 4
 ^ Kolon betyr "har typen", så øverst står det at increment har typen int-til-int, altså er det en funksjon som tar inn en int og returnerer en int
 
 ^ five derimot er bare en int. Det er ikke noen piler fordi five ikke er noen funksjon
+
+^ En ting som er fint med typesignaturene til elm, er at de fungerer omtrent som dokumentasjon, i tillegg til å hjelpe kompilatoren. For hvis du ser at en funksjon heter f.eks. `increment` og tar en int og returnerer en int, så behøver du egentlig ikke se på implementasjonen for å skjønne hva den gjør. Og det er sant for veldig mange funksjoner i elm.
 
 ---
 
@@ -316,7 +326,8 @@ spillerposisjon : Koordinater
 spillerposisjon = (0, 0)
 ```
 
-^ Her har vi et eksempel til på et typealias, der vi sier at vi kaller et par, et tuppel, av inter for Koordinater.
+^ Her har vi et annet eksempel til på et typealias, hvor vi gir navnet Koordinater til et tuppel av to int’er.
+
 
 ^ Og så sier vi at spillerposisjon har typen Koordinater, og er 0-0
 
@@ -393,12 +404,18 @@ ingar =
 
 ^ Men hva nå da? Nå har vi laget en bedriftskunde, som vi ser på `avtale`-feltet, og vi har lagt til et felt i typealiaset som heter `bedriftsnavn`
 
+^ Men vi har jo fortsatt studentRabatten, selv om det ikke er noen studentkunde, fordi studentRabatt er definert i typealiaset vårt.
+
 ---
 
 # Tre problemer:
 _1. Vi får tomme felter med_ dummy-_verdier_
 _2. Enkelt å skrive feil i `type`-feltet_
 _3. Ikke noe hjelp fra kompilatoren_
+
+^ 1, 2, 3
+
+^ ... i JavaScript så ville vi kanskje godtatt at det er sånn man modellerer objekter, men ikke i elm!
 
 ---
 
@@ -521,8 +538,15 @@ Likner litt på hvordan vi bruker komponenter i React.
 
 ## <Bilde>
 
-^
-Redux, som veldig mange etter hvert har omfavnet som måten å håndtere tilstand på i JavaScript-applikasjoner er inspirert av måten Elm hån
+^ Elm-arkitekturen er måten vi strukturer programmene våre i elm. Arkitekturen består av 3 elementer, en modell, et view og en update-funksjon. Dette vil virke kjent for dere som har brukt redux i javascript, for Elm var faktisk en viktig innflytelse på Dan Abramov som lagde Redux.
+
+^ Model: tilstanden til programmet
+
+^ View: en funksjon som tar modellen som argumenter og lager et brukergrensesnitt basert på det
+
+^ Update: en funksjon som tar imot beskjeder og en modell og returnerer en ny modell
+
+^ Starter med en modell som lager et view, view sender beskjeder (f.eks. ved at brukeren trykker på en knapp), og update tar imot beskjeden og lager en ny modell, som igjen oppdaterer viewet, som kan sende beskjeder, og sånn går det i en evig rund-dans
 
 ---
 

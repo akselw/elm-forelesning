@@ -1,2 +1,8 @@
 .DS_Store
 .#*
+.idea
+
+demo2/.cache
+demo2/dist
+demo2/elm-stuff
+demo2/node_modules

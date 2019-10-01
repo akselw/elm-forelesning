@@ -18,8 +18,10 @@ Mitt navn er johanne, <Aksel>
 ## Plan
 
 * Funksjonell programmering og webapplikasjoner
-* Syntaks og språkkonsepter
-* Liten app 
+* Syntaks og språkkonsepter, sammenligning med Scheme
+* Livekoding
+* Dere programmerer
+* Oppsummering
 
 ^ 
 * Snakke litt om våre erfaringer med funksjonell programmering og webutvikling
@@ -81,6 +83,22 @@ Johanne: Vi bruker CSS til å style nettsidene våre, altså for å sette opp la
 ![40%](./images/js-logo.png)
 
 ^ Og så selve rosinen i pølsa: JavasScript. JavaScript brukes til å gjøre sidene interaktive, og er helt nødvendig i de fleste moderne webapplikasjoner slik vi kjenner dem. Hvis man ønsker noe mer enn en statisk nettside med hardkodet tekst, er det JavaScript som fikser biffen.
+
+---
+
+![fit](images/web-architecture/1-start.pdf)
+
+---
+
+![fit](images/web-architecture/2-html.pdf)
+
+---
+
+![fit](images/web-architecture/3-css-js.pdf)
+
+---
+
+![fit](images/web-architecture/4-json.pdf)
 
 ---
 
@@ -151,7 +169,7 @@ Andre ting som folk irriterer seg grønne over med javascript, er:
 
 ---
 
-`Cannot read property 'getFullYear' of undefined`
+`Cannot read property 'name' of undefined`
 
 --- 
 
@@ -169,43 +187,45 @@ JavaScript har gjort det enda vanskeligere for seg selv med å slenge undefined 
 
 ---
 
-### _Elm:_ Laget for webapplikasjoner
+### _Elm:_ 
+### Laget for webapplikasjoner
 
 ^
-Elm er én pakke for webapplikasjoner, som vi i en JavaScript-verden bare kan løse ved å kombinere flere rammeverk som React, redux, immutable.js med mer.
+Elm er én pakke for webapplikasjoner, 
+som vi i en JavaScript-verden bare kan løse ved å kombinere flere rammeverk som React,
+redux, immutable.js med mer.
 
 ---
 
-### _Elm:_ Kompilerer ned til JavaScript
-
-^ Det skal sies, per i dag kompileres Elm ned til JavaScript, for det er det nettleserne har støtte for å kjøre. Men i fremtiden kompilerer det kanskje til noe annet. Ikke et javascriptrammeverk, et eget språk, ikke tett knyttet til js.
-
----
-
-### _Elm:_ Statisk typet funksjonelt språk
+### _Elm:_ 
+### Statisk typet funksjonelt språk
 
 ---
 
-### _Elm:_ Lover “ingen kjøretidsfeil”
+### _Elm:_ 
+### Lover “ingen kjøretidsfeil”
 ^
 Elm har hverken null eller undefined.
 
 ---
 
-### _Elm:_ Gode kompilatorfeilmeldinger
+### _Elm:_ 
+### Gode kompilatorfeilmeldinger
 
 ^ Skal se eksempler på dette senere.
 
 ---
 
-### _Elm:_ Fokuserer på brukervennlighet
+### _Elm:_ 
+### Fokuserer på brukervennlighet
 
 ^
 Både i språket selv, men også i flyten rundt: feilmeldinger, enkelhet med å komme igang.
 
 ---
 
-### _Elm:_ Tydelig, gjennomgående filosofi
+### _Elm:_ 
+### Tydelig, gjennomgående filosofi
 
 ^ 
 Èn måte å lage webapps på, en konsensus om hva som er den beste måten.
@@ -213,7 +233,37 @@ Lett å lære, enkelt å bruke.
 
 ---
 
-### _Elm:_ Offisielt anbefalte biblioteker for det man trenger
+### _Elm:_ 
+### Alt inkludert
+
+
+
+---
+
+### _Elm:_ 
+### Kompilerer ned til JavaScript
+
+^ Det skal sies, per i dag kompileres Elm ned til JavaScript,
+for det er det nettleserne har støtte for å kjøre.
+Men i fremtiden kompilerer det kanskje til noe annet, som WebAssembly.
+
+^ WebAssembly vil også gjøre det vanligere med alternativer til JavaScript,
+så om noen år (5-10) så vil det nok være enda vanligere å lage nettsider i andre språk enn javascript
+
+
+---
+
+### _Elm:_ 
+### Kompilerer ned til JavaScript
+
+
+^ Men selv om Elm kompilerer til javascript _er det_ ikke et javascriptrammeverk.
+Det er et eget språk, ikke tett knyttet til js.
+Akkurat som C ikke er spesielt tett knyttet til assembly,
+og Java ikke er spesielt tett knyttet til JVM bytecode.
+
+^ Det gjør også at Elm står fritt til å endre seg, uavhengig av Javascript,
+fordi Elm bare kan fjerne/endre features i språket og så kompilere på nytt til den samme javascripten. 
 
 ---
 
@@ -224,50 +274,135 @@ Lett å lære, enkelt å bruke.
 ^ Til slutt skal vi live-kode en liten interaktiv nettside
 
 ---
-
 # Funksjoner & typeinferens
 
 ```elm
+-- Elm:
+
 increment x =
     x + 1
-
-five = increment 4
 ```
 
-^ Dette er elm. Her har vi en funksjonsdefinisjon, og binding av en verdi til et navn.
+```scheme
+;; Scheme:
 
-^ increment er en funksjon som tar ett argument: `x`, og returnerer `x + 1`. Siden elm er rent funksjonelt, og vi bare kaller funksjoner for returnverdien så har vi ikke noe return-ord. Det er resultatet av evalueringen som returneres, akkurat som i scheme
+(define (increment x)
+    (+ x 1))
+```
 
-^ Under binder vi resultatet av å kalle increment med argumentet 4, til navnet five
+
+[.table-separator: #ffffff, stroke-width(0)] 
+
+---
+# Funksjoner & typeinferens
+
+```elm
+-- Elm:
+
+increment x =
+    x + 1
+    
+four = increment 3
+```
+
+```scheme
+;; Scheme:
+
+(define (increment x)
+    (+ x 1))
+    
+(define four (increment 3))
+```
+
+
+---
+# Funksjoner & typeinferens
+
+
+```elm
+-- Elm:
+
+increment x =
+    x + 1
+    
+five = increment (increment 3)
+```
+
+```scheme
+;; Scheme:
+
+(define (increment x)
+    (+ x 1))
+    
+(define five (increment (increment 3)))
+```
+
+---
+
+# Feilmeldinger
+
+---
+
+![125%](./images/feilmelding-1-scheme.png)
+
+---
+
+![100%](./images/feilmelding-1-elm.png)
+
+^ Forslag til funksjoner man kan bruke!
+
+^ Lenker til artikler man kan lese
+
+
 
 ---
 
 # Funksjoner & typeinferens
 
+
 ```elm
+-- Elm:
+
 increment x =
     x + 1
-
-five = increment 4
+    
+five = increment (increment 3)
 ```
 
-^ Selv om elm har et typesystem så er man ikke pålagt å legge på typer, men man får fortsatt hjelp av kompilatoren. Så her forstår elm at increment tar et tall som argument og returnerer et tall, på grunn av pluss-operatoren.
+```scheme
+;; Scheme:
 
-^ Så dersom vi hadde prøvd å kalle increment med en streng så hadde vi ikke fått kompilere
+(define (increment x)
+    (+ x 1))
+    
+(define five (increment (increment 3)))
+```
 
 ---
 
 # Typesignaturer
 
+
 ```elm
+-- Elm:
 
 increment : Int -> Int
 increment x =
     x + 1
 
-five : Int
-five = increment 4
+five : Int    
+five = increment (increment 3)
 ```
+
+```scheme
+;; Scheme:
+
+(define (increment x)
+    (+ x 1))
+    
+(define five (increment (increment 3)))
+```
+
 
 ^ Men som oftest så har vi lyst til å legge på typesignaturer, og det gjør vi på denne måten.
 
@@ -284,12 +419,12 @@ five = increment 4
 ```elm
 kunde : { navn : String, alder : Int }
 kunde = 
-    { navn = "Ingar"
-    , alder = 24
+    { navn = "Aksel"
+    , alder = 29
     }
 ```
 
-^ For mer komplekse datatyper har elm bl.a. records. En record er litt som et objekt i javascript eller et HashMap i java. Her lager vi en record `kunde`, som har to felter: `navn` med verdi `Ingar` og `alder` med verdi `24`
+^ For mer komplekse datatyper har elm bl.a. records. En record er litt som et objekt i javascript eller et HashMap i java. Her lager vi en record `kunde`, som har to felter: `navn` med verdi `Aksel` og `alder` med verdi `29`
 
 ^ I tillegg så har vi en typesignatur på `kunde` som sier at dette er en record, der `navn` er en streng, og `alder` er en int.
 
@@ -305,8 +440,8 @@ type alias Kunde =
 
 ingar : Kunde
 ingar =
-    { navn = "Ingar"
-    , alder = 24
+    { navn = "Aksel"
+    , alder = 29
     }   
 ```
 
@@ -341,14 +476,14 @@ spillerposisjon = (0, 0)
 ```elm
 type alias Kunde =
     { navn: String
-    , alder: Int,
+    , alder: Int
     , avtale: String
     }
 
-ingar : Kunde
-ingar =
-    { navn = "Ingar"
-    , alder = 24
+aksel : Kunde
+aksel =
+    { navn = "Aksel"
+    , alder = 29
     , avtale = "Student"
     }   
 ```
@@ -364,16 +499,16 @@ ingar =
 ```elm
 type alias Kunde =
     { navn: String
-    , alder: Int,
+    , alder: Int
     , avtale: String
     , studentRabatt: Int
     }
 
-ingar : Kunde
-ingar =
-    { navn = "Ingar"
-    , alder = 24
-    , avtale = "Student",
+aksel : Kunde
+aksel =
+    { navn = "Aksel"
+    , alder = 29
+    , avtale = "Student"
     , studentRabatt = 50
     }
 ```
@@ -387,17 +522,17 @@ ingar =
 ```elm
 type alias Kunde =
     { navn: String
-    , alder: Int,
+    , alder: Int
     , avtale: String
     , studentRabatt: Int
     , bedriftsnavn: String
     }
 
-ingar : Kunde
-ingar =
-    { navn = "Ingar"
-    , alder = 24
-    , avtale = "Bedrift",
+aksel : Kunde
+aksel =
+    { navn = "Aksel"
+    , alder = 29
+    , avtale = "Bedrift"
     , studentRabatt = 0
     , bedriftsnavn = "Bekk Consulting"
     }
@@ -476,14 +611,14 @@ Type alias for å gjøre signaturene til typene enklere å lese. Men Student tar
 ```elm
 type alias Kunde =
     { navn: String
-    , alder: Int,
+    , alder: Int
     , avtale: Kundeavtale
     }
 
-ingar : Kunde
-ingar =
-    { navn = "Ingar"
-    , alder = 24
+aksel : Kunde
+aksel =
+    { navn = "Aksel"
+    , alder = 29
     , avtale = Bedrift "Bekk Consulting"
     }   
 ```
@@ -589,10 +724,17 @@ Som jeg nevnte tidligere, er elm en fullstendig løsning for webapplikasjoner - 
 
 # HTML
 
+```html
+<div>
+    <img src="/image.png" />
+    <h1>Min elm-app!</h1>
+</div>
+```
+
 ```elm
 div []
-    [ img [src "/image.png"] []
-    , h1 [] [ text "Min elm-app!"]
+    [ img [ src "/image.png" ] []
+    , h1 [] [ text "Min elm-app!" ]
     ]
 ```
 
@@ -610,7 +752,7 @@ Ellers likner måten vi forholder oss til html i elm litt på hvordan vi bruker 
 
 ---
 
-![fit](./images/tea-model.jpg)
+![fit](./images/the-elm-architecture/1-model.pdf)
 
 ^ Model: tilstanden til programmet
 
@@ -618,19 +760,19 @@ Ellers likner måten vi forholder oss til html i elm litt på hvordan vi bruker 
 
 ---
 
-![fit](./images/tea-view.jpg)
+![fit](./images/the-elm-architecture/2-view.pdf)
 
 ^ View: en funksjon som tar modellen som argument og lager et brukergrensesnitt basert på det
 
 ---
 
-![fit](./images/tea-update.jpg)
+![fit](./images/the-elm-architecture/3-update.pdf)
 
 ^ Update: en funksjon som tar imot beskjeder OG en modell, og returnerer en ny modell
 
 ---
 
-![fit](./images/tea-all.jpg)
+![fit](./images/the-elm-architecture/4-simplified.pdf)
 
 ^ Starter med en modell som lager et view, view sender beskjeder (f.eks. ved at brukeren trykker på en knapp), og update tar imot beskjeden og lager en ny modell, som igjen oppdaterer viewet, som kan sende beskjeder, og sånn går det, i en evig rund-dans
 
@@ -639,8 +781,8 @@ Ellers likner måten vi forholder oss til html i elm litt på hvordan vi bruker 
 # The Elm Architecture
 
 ```elm
-type alias Model = ...
-type Msg = Forskjellige | Beskjeder
+type alias Model = {...}
+type Msg = BrukerTrykketPaaEnKnapp | NoeAnnetSkjedde
 
 view : Model -> Html Msg
 
@@ -663,11 +805,34 @@ update : Msg -> Model -> Model
 
 # [fit] Live-koding
 
+---
 
-^ Aksel
+# Dere programmerer
 
+* 
 
 ---
+
+![autoplay loop mute](images/todo.mov)
+
+---
+
+![fit](images/the-elm-architecture/4-simplified.pdf)
+
+---
+
+![fit](images/the-elm-architecture/5-side-effekter.pdf)
+
+---
+
+![fit](images/the-elm-architecture/6-elm-runtime.pdf)
+
+---
+
+![fit](images/the-elm-architecture/7-full.pdf)
+
+---
+
 
 # Hvorfor Elm
 

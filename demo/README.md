@@ -201,7 +201,7 @@ In the following example we will use JavaScript to change the page title dynamic
 
 ```js
 import './main.css';
-import { Main } from './Main.elm';
+import { Main } from Solution.elm;
 import registerServiceWorker from './registerServiceWorker';
 
 var app = Main.embed(document.getElementById('root'));
@@ -493,7 +493,7 @@ Here is an example:
 
 ```js
 import logoPath from './logo.svg'; // Tell Webpack this JS file uses this image
-import { Main } from './Main.elm';
+import { Main } from StartingPoint.elm;
 
 Main.embed(
     document.getElementById('root'),
@@ -607,7 +607,7 @@ Passing the variables to your Elm-code can be done via `flags`:
 
 ```javascript
 // index.js
-import { Main } from './Main.elm';
+import { Main } from Solution.elm;
 
 Main.fullscreen({
   environment: process.env.NODE_ENV,
@@ -616,7 +616,7 @@ Main.fullscreen({
 ```
 
 ```elm
--- Main.elm
+Solution.elm
 type alias Flags = { apiKey : String, environment : String }
 
 init : Flags -> ( Model, Cmd Msg )

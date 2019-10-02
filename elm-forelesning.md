@@ -1065,6 +1065,8 @@ _Introduksjon til Elm:_ [guide.elm-lang.org](https://guide.elm-lang.org)
 
 _Elm-miljøet har en slack:_ [elmlang.herokuapp.com](https://elmlang.herokuapp.com)
 
+_Podcast:_ Elm Town
+
 ^ Elm-miljøet har en slack der alle kan bli med. Alle er veldig vennlige, og de har en policy om at ingen spørsmål er dumme, og alle spørsmål skal få svar. De har til og med en egen beginner-kanal, der det er masse bra hjelp å få.
 
 ---

@@ -605,6 +605,28 @@ kunde =
 
 ---
 
+# Records
+
+```elm
+kunde : { navn : String, alder : Int }
+kunde =
+    { navn = "Aksel"
+    , alder = 29
+    }
+```
+
+^ Og forresten, så ser kanskje noen av dere på den formatteringen av koden her og tenker "eeeeh, det var rart", og det er litt rart ja.
+
+^ Det er ikke så vanlig i andre språk å putte komma på starten av linja i stedet for slutten. Men dette er sånn kode formatteres på i Elm, men den formatteringen er ikke noe man behøver å gjøre manuelt.
+
+^ Så å si alle Elm-prosjekter som finnes bruker et verktøy som heter elm-format, som formatterer koden hver gang man lagrer en fil.
+
+^ Og selv om formatet er litt rart, og ganske uvant, så blir man fort vant til det. Og det er i tillegg utrolig digg å slippe å ha de diskusjonene med teamet om hvordan man skal formattere koden, for all Elm-kode formatteres helt likt.
+
+^ I tillegg til at du kan se en hvilken som helst kodebase skrevet i Elm og føle deg som hjemme med en gang, som er veldig behagelig.
+
+---
+
 # Type alias
 
 ```elm

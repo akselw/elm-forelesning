@@ -39,8 +39,8 @@ initialModel =
 type Msg
     = TextUpdated String
     | TodoAdded
-    | TodoCompleted Int
     | TodoDeleted Int
+    | CompleteToggled Int
 
 
 update : Msg -> Model -> Model
@@ -56,7 +56,15 @@ update msg model =
                 , nextId = model.nextId + 1
             }
 
-        TodoCompleted completedTodoId ->
+        TodoDeleted deletedTodoId ->
+            { model
+                | todos =
+                    List.filter
+                        (\todo -> todo.id /= deletedTodoId)
+                        model.todos
+            }
+
+        CompleteToggled completedTodoId ->
             { model
                 | todos =
                     List.map
@@ -67,14 +75,6 @@ update msg model =
                             else
                                 todo
                         )
-                        model.todos
-            }
-
-        TodoDeleted deletedTodoId ->
-            { model
-                | todos =
-                    List.filter
-                        (\todo -> todo.id /= deletedTodoId)
                         model.todos
             }
 
@@ -125,7 +125,7 @@ viewTodo : Todo -> Html Msg
 viewTodo todo =
     li [ classList [ ( "completed", todo.completed ) ] ]
         [ div [ class "view" ]
-            [ input [ class "toggle", type_ "checkbox", checked todo.completed, onClick (TodoCompleted todo.id) ] []
+            [ input [ class "toggle", type_ "checkbox", checked todo.completed, onClick (CompleteToggled todo.id) ] []
             , label [] [ text todo.text ]
             , button [ class "destroy", onClick (TodoDeleted todo.id) ] []
             ]
@@ -166,3 +166,4 @@ footer [ class "footer" ]
     , button [ class "clear-completed" ] [ text "Clear completed (x)" ]
     ]
 --}
+-- (a [][ text "Active"] er egentlig en lenke, men man kan behandle dem som buttons med onClick)

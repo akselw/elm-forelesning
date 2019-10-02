@@ -984,17 +984,19 @@ update : Msg -> Model -> Model
 
 # Dere programmerer
 
-TODO : Lenke til oppgave
+*https://tinyurl.com/elm-in2040-2019*
 
 ---
 
 # Løsning
 
+^ Hele løsningen er 150 linjer eller noe sånt! En fullt fungerende webapp 
+
 ---
 
 # Løsning
 
-TODO : Lenke til løsning
+https://tinyurl.com/elm-in2040-2019-solution
 
 ---
 
@@ -1028,8 +1030,8 @@ TODO : Lenke til løsning
 
 # Vil du prøve selv?
 
-create-elm-app / parcel.js
-netlify
+*Starte et prosjekt:* create-elm-app / parcel.js
+*Deploye til internett:* netlify
 
 ---
 

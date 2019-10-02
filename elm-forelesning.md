@@ -1031,7 +1031,10 @@ https://tinyurl.com/elm-in2040-2019-solution
 # Vil du prøve selv?
 
 *Starte et prosjekt:* create-elm-app / parcel.js
+*Editor:* IntelliJ med Elm-pluginet
 *Deploye til internett:* netlify
+
+^ Slå et slag for IntelliJ til Java også
 
 ---
 
